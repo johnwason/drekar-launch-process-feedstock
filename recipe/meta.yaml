@@ -1,0 +1,44 @@
+{% set name = "drekar-launch-process" %}
+{% set version = "0.1.3" %}
+
+package:
+  name: {{ name }}
+  version: {{ version }}
+
+source:
+  git_url: https://github.com/johnwason/drekar-launch-process.git
+  git_ref: {{ version }}
+
+build:
+  number: 0
+  script: "{{ PYTHON }} -m pip install . -vv"
+  noarch: python
+
+requirements:
+  host:
+    - pip
+    - python >=3.6
+  run:
+    - python >=3.6
+
+
+test:
+  requires:
+    - pytest
+    - pywin32  # [win]
+  source_files:
+    - test/
+  imports:
+    - pytest
+  commands:
+    - pytest test/ --verbose
+
+about:
+  home: https://github.com/johnwason/drekar-launch
+  license: Apache-2.0
+  license_file: LICENSE.txt
+  summary: Client library for drekar-launch
+
+extra:
+  recipe-maintainers:
+    - johnwason
