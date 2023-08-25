@@ -10,7 +10,7 @@ source:
   git_rev: {{ version }}
 
 build:
-  number: 0
+  number: 1
   script: "{{ PYTHON }} -m pip install . -vv"
   noarch: python
 
@@ -34,7 +34,7 @@ test:
     - pytest test/ --verbose
 
 about:
-  home: https://github.com/johnwason/drekar-launch
+  home: https://github.com/johnwason/drekar-launch-process
   license: Apache-2.0
   license_file: LICENSE.txt
   summary: Client library for drekar-launch
