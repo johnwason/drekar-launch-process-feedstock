@@ -7,7 +7,7 @@ package:
 
 source:
   git_url: https://github.com/johnwason/drekar-launch-process.git
-  git_ref: {{ version }}
+  git_rev: {{ version }}
 
 build:
   number: 0
